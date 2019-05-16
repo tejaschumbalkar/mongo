@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    app: mlkyoto
+  name: mlkyoto
+spec:
+  ports:
+    - port: 7000
+      targetPort: 7000
+  selector:
+    app: mlkyoto

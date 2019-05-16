@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: mlkyoto2
+  labels:
+    app: mlkyoto2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mlkyoto2
+  template:
+    metadata:
+      labels:
+        app: mlkyoto2
+    spec:
+      containers:
+      - name: mlkyoto2
+        image: tejaschumbalkar/running_code
+        ports:
+        - containerPort: 7000
+          protocol: TCP
+      nodeSelector:
+        slave: "slave02"
